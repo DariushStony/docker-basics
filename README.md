@@ -12,7 +12,7 @@ It's running different OS also the applications such as databases, web services,
 1. Server / Hardware -> Hypervisor -> VMs
 2. Server / Hardware -> OS -> Hypervisor -> VMs
 
-To build Virtual machines you start off with hardware and then on top of the hardware, there is a software called a _Hypervisor_.  
+To build Virtual machines you start off with hardware and then on top of the hardware, there is software called a _Hypervisor_.  
 A hypervisor is what allows one machine to run multiple virtual machines.  
 It's what allocates and controls the sharing of a machine's hardware.  
 On top of the hypervisor are the virtual machines and each will have its own operating systems such as Windows, Linux, and Unix.  
@@ -21,13 +21,13 @@ On top of the operating system, there are the applications that these machines a
 ### What is kernel?
 
 A kernel manages applications and hardware resources.  
-Every OS has its own kernel and these kernels have different APIs, That's why we can not run a windows application on Linux because under the hood this application needs to talk to the kernel of the underlying OS.
+Every OS has its own kernel and these kernels have different APIs, That's why we can not run a Windows application on Linux because under the hood this application needs to talk to the kernel of the underlying OS.
 
 ---
 
 ## What is docker?
 
-A platform for building, running and shipping applications.  
+A platform for building, running, and shipping applications.  
 Reasons **It works on my machine** but not on other machines:
 
 -   One or more files missing
@@ -49,7 +49,7 @@ _The leading software that is used to create, manage, and run containers is dock
 
     using a tool called _hypervisor_
 
-A Hypervisor is a software used to create and manage virtual machine.
+A Hypervisor is software used to create and manage virtual machines.
 
 Hypervisors:
 
@@ -57,29 +57,29 @@ Hypervisors:
 -   VMware
 -   Hyper-v (windows only)
 
-### What are the benefits of VM and Container?
+### What are the benefits of VMs and Containers?
 
 run applications in isolation
 
-### Problems with virtual machine:
+### Problems with the virtual machine:
 
 -   Each VM needs a full-blown OS (needs to be licensed, patched, and monitor)
 -   Slow to start (because the entire OS has to be loaded)
 -   Resource intensive (because each VM takes a slice of the actual physical hardware resources)
     -   Consume a lot of disk space
-    -   Consume a lot of RAM and CPU power from server
+    -   Consume a lot of RAM and CPU power from the server
 
 ### Containers
 
-A **container** is an application that's been packaged with all the _files_, _configurations_, _dependencies_ neccessary for it to run.  
+A **container** is an application that's been packaged with all the _files_, _configurations_, and _dependencies_ necessary for it to run.  
 give us the same kind of isolation (But with advantages over VM).  
 The containers share the underlying operating system that's on the server between them.
 
 -   allow running multiple apps in isolation
 -   are lightweight
--   use OS of the host
+-   use the OS of the host
 -   start quickly
--   need less hardware resources
+-   need fewer hardware resources
 
 ---
 
@@ -92,16 +92,16 @@ Technically a container is just a process.
 All containers on a host share the _kernel of the OS_ of the host.  
 Server / Hardware -> OS -> Container engine
 
-#### What is daemon?
+#### What is a daemon?
 
 In computing, a daemon (pronounced DEE-muhn) is a program that runs continuously as a background process and wakes up to handle periodic service requests, which often come from remote processes.
 
 ### Container Engine
 
-1. A server with long-running daemon process "dockerd".
+1. A server with a long-running daemon process "dockerd".
 2. Manages images & containers.
 
-In a nutshell the container engine is what unpacks the container files and hands them off to the operating systems kernel.  
+In a nutshell, the container engine is what unpacks the container files and hands them off to the operating systems kernel.  
 **The Docker daemon:**  
 The Docker daemon (dockerd) listens for Docker API requests and manages Docker objects such as images, containers, networks, and volumes. A daemon can also communicate with other daemons to manage Docker services.
 
@@ -111,18 +111,18 @@ The Docker daemon (dockerd) listens for Docker API requests and manages Docker o
 
 Docker CLI Client:
 
-1. Command Line Interface ("docker") to interact with server.
+1. Command Line Interface ("docker") to interact with the server.
 2. Execute docker commands to start/stop/... containers.
 
 The Docker client (docker) is the primary way that many Docker users interact with Docker. When you use commands such as docker run, the client sends these commands to dockerd, which carries them out. The docker command uses the Docker API. The Docker client can communicate with more than one daemon.
 
 ### Running containers
 
-Any container requires the container image to run on a kernel that was design for it.
+Any container requires the container image to run on a kernel that was designed for it.
 Windows can run both Linux and Windows containers  
-because windows10 is now shipped with a custom-built Linux kernel.  
+because Windows 10 is now shipped with a custom-built Linux kernel.  
 Linux can only run Linux containers.  
-MacOS (OSX) has its own kernel which is different from Linux and windows kernels and this kernel does not have native support for containers of applications.  
+MacOS (OSX) has its own kernel which is different from Linux and Windows kernels and this kernel does not have native support for containers of applications.  
 so docker on MacOS makes uses a lightweight **Linux VM** to run Linux containers.  
 Most containers run on a Linux kernel.  
 So when you install Docker Desktop it will manage a local VM, running a tiny Linux kernel and tiny container file system.
