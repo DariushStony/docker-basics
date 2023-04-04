@@ -23,6 +23,11 @@ On top of the operating system, there are the applications that these machines a
 A kernel manages applications and hardware resources.  
 Every OS has its own kernel and these kernels have different APIs, That's why we can not run a Windows application on Linux because under the hood this application needs to talk to the kernel of the underlying OS.
 
+### What is KVM?
+
+Kernel-Based Virtual Machine.  
+KVM is a hypervisor that is built into the Linux kernel and for using it you just need to install some tools.
+
 ---
 
 ## What is docker?
